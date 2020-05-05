@@ -17,6 +17,7 @@ namespace examination_2
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }
+            }
         }
         public abstract double Perimeter {get;}
         public double Width 
@@ -31,6 +32,18 @@ namespace examination_2
         {
             Length = length;
             Width = width;
+        }
+
+
+        //Fixa-----------------------
+        public override string ToString()
+        {
+            return "hej";
+        }
+
+        public override string ToString(string format)
+        {
+            return format;
         }
 
     }

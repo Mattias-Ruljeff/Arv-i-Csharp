@@ -13,7 +13,7 @@ namespace examination_2
             shapeType = Shapetype;
         }
 
-        public abstract string ToString(String format);
+        public abstract string ToString(string format);
         
     }
 
