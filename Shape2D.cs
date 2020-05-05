@@ -7,23 +7,30 @@ namespace examination_2
         private double _length;
         private double _width;
 
-        public abstract double Area {get;}
+        public abstract double Area { get; }
         public double Length 
         {
             get { return _length; }
             set { 
-                if (value > 0){
-                    value = _length; 
-                } else {
-                    throw new ArgumentOutOfRangeException("Insert a number larger than 0");
-                }
+                value = _length;
+                // if (value > 0){
+                //     value = _length; 
+                // } else {
+                //     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
+                // }
             }
         }
         public abstract double Perimeter {get;}
         public double Width 
         { 
-            get{return _width;}
-            set { value = _width; }
+            get{ return _width;}
+            set {
+                if (value > 0) {
+                    value = _width; 
+                } else {
+                    throw new ArgumentOutOfRangeException("Insert a number larger than 0");
+                }
+             }
         }
 
 
@@ -38,11 +45,17 @@ namespace examination_2
         //Fixa-----------------------
         public override string ToString()
         {
-            return "hej";
+            Console.WriteLine(Width);
+            Console.WriteLine(Length);
+            Console.WriteLine(Area);
+            Console.WriteLine(Perimeter);
+
+            return "Rectangel";
         }
 
         public override string ToString(string format)
         {
+            System.Console.WriteLine(format);
             return format;
         }
 

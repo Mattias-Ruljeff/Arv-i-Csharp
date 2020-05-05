@@ -6,7 +6,8 @@ namespace examination_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello börje!");
+            Rectangle rectangle = new Rectangle(ShapeType.Rectangle, 10.0, 10.0);
+            Console.WriteLine(rectangle);
         }
     }
 }

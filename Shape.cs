@@ -7,7 +7,6 @@ namespace examination_2
         public bool is3d {get;}
         public ShapeType Shapetype {get; private set;}
 
-
         protected Shape(ShapeType shapeType)
         {
             shapeType = Shapetype;

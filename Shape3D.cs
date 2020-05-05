@@ -13,7 +13,7 @@ namespace examination_2
             get { return _height; } 
             set { 
                 if (value > 0){
-                    value = _height; 
+                    value = _height;
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }
