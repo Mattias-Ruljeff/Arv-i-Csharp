@@ -9,7 +9,7 @@ namespace examination_2
 
         protected Shape(ShapeType shapeType)
         {
-            shapeType = Shapetype;
+            Shapetype = shapeType;
         }
 
         public abstract string ToString(string format);

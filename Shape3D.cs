@@ -5,15 +5,14 @@ namespace examination_2
     abstract class Shape3D : Shape
     {
         protected Shape2D _baseShape;
-        private double _height;
-
+        private double _height = 0;
 
         public double Height 
         {
             get { return _height; } 
             set { 
                 if (value > 0){
-                    value = _height;
+                    _height = value;
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }
@@ -24,7 +23,7 @@ namespace examination_2
             get { return _baseShape.Length; } 
             set { 
                 if (value > 0){
-                    value = _baseShape.Length; 
+                    _baseShape.Length = value; 
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }
@@ -37,7 +36,7 @@ namespace examination_2
             get { return _baseShape.Width; } 
             set { 
                 if (value > 0){
-                    value = _baseShape.Width; 
+                    _baseShape.Width = value; 
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }

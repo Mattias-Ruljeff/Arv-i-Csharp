@@ -4,7 +4,7 @@ namespace examination_2
 {
     class Rectangle : Shape2D
     {
-        protected Shape2D _baseShape;
+        protected Shape2D _base2D;
         public override double Area {
             get{ return Length * Width ;}
             }
@@ -13,7 +13,7 @@ namespace examination_2
         }
 
         public Rectangle(ShapeType shapeType, double length, double width)
-        :base(shapeType, length, width)
+        : base(shapeType, length, width)
         {
             Length = length;
             Width = width;

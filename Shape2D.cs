@@ -4,15 +4,15 @@ namespace examination_2
 {
     abstract class Shape2D : Shape
     {
-        private double _length;
-        private double _width;
+        private double _length = 0;
+        private double _width = 0;
 
         public abstract double Area { get; }
         public double Length 
         {
             get { return _length; }
             set { 
-                value = _length;
+                _length = value;
                 // if (value > 0){
                 //     value = _length; 
                 // } else {
@@ -26,7 +26,7 @@ namespace examination_2
             get{ return _width;}
             set {
                 if (value > 0) {
-                    value = _width; 
+                    _width = value; 
                 } else {
                     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
                 }
@@ -45,10 +45,11 @@ namespace examination_2
         //Fixa-----------------------
         public override string ToString()
         {
-            Console.WriteLine(Width);
-            Console.WriteLine(Length);
-            Console.WriteLine(Area);
-            Console.WriteLine(Perimeter);
+            Console.WriteLine($"Bredd {Width}");
+            Console.WriteLine($"Längd {Length}");
+            Console.WriteLine($"Area {Area}");
+            Console.WriteLine($"Omkrets {Perimeter}");
+            Console.WriteLine($"Typ av form {Shapetype}");
 
             return "Rectangel";
         }
