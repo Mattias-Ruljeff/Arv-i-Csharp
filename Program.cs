@@ -23,11 +23,11 @@ namespace examination_2
             {
                 case "2d":
                     is3d =  false;
-                    PrintShapesInConsole.printer(is3d);
+                    PrintShapesInConsole.createShapes(is3d);
                     break;
                 case "3d":
                     is3d = true;
-                    PrintShapesInConsole.printer(is3d);
+                    PrintShapesInConsole.createShapes(is3d);
                     break;
                 default :
                     throw new ArgumentException("Enter either \"2d\" or \"3d\"");

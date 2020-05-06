@@ -14,8 +14,6 @@ namespace examination_2
         public Rectangle(double length, double width)
         : base(ShapeType.Rectangle, length, width)
         {
-            Length = length;
-            Width = width;
         }
 
     }
