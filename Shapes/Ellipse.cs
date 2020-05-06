@@ -22,8 +22,8 @@ namespace examination_2
             ;}
         }
 
-        public Ellipse(ShapeType shapeType, double length, double width, double diameter) 
-        : base(shapeType, length, width)
+        public Ellipse(double length, double width) 
+        : base(ShapeType.Ellipse, length, width)
         {
             Length = length;
             Width = width;

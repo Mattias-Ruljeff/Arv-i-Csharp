@@ -4,10 +4,9 @@ namespace examination_2
 {
     class Cuboid : Shape3D
     {
-        public Cuboid(ShapeType shapeType, Shape2D _baseShape, double length, double width, double height)
-        :base(shapeType, _baseShape, height)
+        public Cuboid(double length, double width, double height)
+        :base(ShapeType.Cuboid, new Rectangle(length, width), height)
         {
-            Height = height;
         }
     }
 }

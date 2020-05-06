@@ -8,8 +8,8 @@ namespace examination_2
             get {return ((_baseShape.Length/2) * (_baseShape.Length/2) * Math.PI );}
             set {;}
         }
-        public Sphere(ShapeType shapeType, Shape2D _baseShape, double height, double diameter)
-        :base(shapeType, _baseShape, height)
+        public Sphere(double diameter)
+        :base(ShapeType.Ellipse, new Ellipse(diameter, diameter), diameter)
         {
 
         }

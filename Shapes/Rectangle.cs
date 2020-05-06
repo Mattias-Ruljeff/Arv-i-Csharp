@@ -4,7 +4,6 @@ namespace examination_2
 {
     class Rectangle : Shape2D
     {
-        protected Shape2D _base2D;
         public override double Area {
             get{ return Length * Width ;}
             }
@@ -12,8 +11,8 @@ namespace examination_2
             get{ return ( Length * 2 ) + ( Width * 2 );}
         }
 
-        public Rectangle(ShapeType shapeType, double length, double width)
-        : base(shapeType, length, width)
+        public Rectangle(double length, double width)
+        : base(ShapeType.Rectangle, length, width)
         {
             Length = length;
             Width = width;

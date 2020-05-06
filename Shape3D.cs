@@ -5,7 +5,7 @@ namespace examination_2
     abstract class Shape3D : Shape
     {
         protected Shape2D _baseShape;
-        private double _height = 0;
+        private double _height;
 
         public double Height 
         {
@@ -18,48 +18,43 @@ namespace examination_2
                 }
             }
         }
-        public double Lenght 
-        { 
-            get { return _baseShape.Length; } 
-            set { 
-                if (value > 0){
-                    _baseShape.Length = value; 
-                } else {
-                    throw new ArgumentOutOfRangeException("Insert a number larger than 0");
-                }
-            }
-         }
-        public double MantelArea {get;}
-        public double TotalSurfaceArea {get;}
-        public double Width 
-        { 
-            get { return _baseShape.Width; } 
-            set { 
-                if (value > 0){
-                    _baseShape.Width = value; 
-                } else {
-                    throw new ArgumentOutOfRangeException("Insert a number larger than 0");
-                }
-            }
+        public double Length {get; set;}
+        public double MantelArea {
+            get { return _baseShape.Perimeter * Height;}
         }
-        public double Volume {get;}
+        public double TotalSurfaceArea {
+            get{ return MantelArea + 2 * _baseShape.Area; }
+        
+        }
+        public double Width {get; set;}
+        public double Volume {
+            get{return _baseShape.Area * Height;}
+        }
 
-        protected Shape3D(ShapeType shapeType, Shape2D _baseShape, double height) 
+        protected Shape3D(ShapeType shapeType, Shape2D baseShape, double height) 
         : base(shapeType)
         {
+            _baseShape = baseShape;
             Height = height;
         }
 
 
         //Fixa-----------------------
-        public override string ToString()
-        {
-            return "hej";
-        }
+        public override string ToString() => ToString("G");
 
         public override string ToString(string format)
         {
-            return format;
+            switch (format)
+            {
+                case null:
+                case "":
+                case "G":
+                    return $"Längd: {_baseShape.Length}\nBredd: {_baseShape.Width}\nHöjd: {Height}\nMantelarea: {MantelArea}\nBegränsningsarea: {TotalSurfaceArea}\nVolym: {Volume}\n";
+                case "R":
+                    return $"{ShapeType} {_baseShape.Length} {_baseShape.Width} {Height} {MantelArea} {TotalSurfaceArea} {Volume}";
+                default:
+                    throw new FormatException();
+            }
         }
 
     }

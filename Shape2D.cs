@@ -12,12 +12,11 @@ namespace examination_2
         {
             get { return _length; }
             set { 
-                _length = value;
-                // if (value > 0){
-                //     value = _length; 
-                // } else {
-                //     throw new ArgumentOutOfRangeException("Insert a number larger than 0");
-                // }
+                if (value > 0){
+                    value = _length; 
+                } else {
+                    throw new ArgumentOutOfRangeException("Insert a number larger than 0");
+                }
             }
         }
         public abstract double Perimeter {get;}
@@ -41,23 +40,21 @@ namespace examination_2
             Width = width;
         }
 
-
-        //Fixa-----------------------
-        public override string ToString()
-        {
-            Console.WriteLine($"Bredd {Width}");
-            Console.WriteLine($"Längd {Length}");
-            Console.WriteLine($"Area {Area}");
-            Console.WriteLine($"Omkrets {Perimeter}");
-            Console.WriteLine($"Typ av form {Shapetype}");
-
-            return "Rectangel";
-        }
+        public override string ToString() => ToString("G");
 
         public override string ToString(string format)
         {
-            System.Console.WriteLine(format);
-            return format;
+            switch (format)
+            {
+                case null:
+                case "":
+                case "G":
+                    return $"Längd: {Length}\nBredd: {Width}\nOmkrets: {Perimeter}\nArea: {Area}\n";
+                case "R":
+                    return $"{ShapeType} {Length} {Width} {Perimeter} {Area}";
+                default:
+                    throw new FormatException();
+            }
         }
 
     }
