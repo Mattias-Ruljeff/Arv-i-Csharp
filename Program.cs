@@ -5,41 +5,34 @@ namespace examination_2
     class Program
     {
         static String shapeType = "";
-        static int numberOfShapes;
+        static bool is3d;
 
         static void Main(string[] args)
         {
-
             Menu();
-
-
         }
 
-            static void Menu () {
+        static void Menu () {
             Console.WriteLine("Create a list of Shapes");
             Console.WriteLine("Choose shape");
-            Console.WriteLine("\t2d - Shape 2D");
-            Console.WriteLine("\t3d - Shape 3D");
+            Console.WriteLine("Enter \"2d\" for Shape 2D");
+            Console.WriteLine("Enter \"3d\" for Shape 3D");
             shapeType = Console.ReadLine();
-
-            Console.WriteLine("How many shapes?");
-            numberOfShapes = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine($"{shapeType} {numberOfShapes}");
 
             switch (shapeType) 
             {
                 case "2d":
-                    Console.WriteLine("");
+                    is3d =  false;
+                    PrintShapesInConsole.printer(is3d);
                     break;
-                
                 case "3d":
-                    Console.WriteLine("");
+                    is3d = true;
+                    PrintShapesInConsole.printer(is3d);
                     break;
                 default :
                     throw new ArgumentException("Enter either \"2d\" or \"3d\"");
             }
 
-            }
+        }
     }
 }
