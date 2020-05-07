@@ -24,3 +24,5 @@ H:\Skolan\1DV024 C#\examination-2\obj\Debug\netcoreapp3.1\examination-2.Assembly
 H:\Skolan\1DV024 C#\examination-2\obj\Debug\netcoreapp3.1\examination-2.dll
 H:\Skolan\1DV024 C#\examination-2\obj\Debug\netcoreapp3.1\examination-2.pdb
 H:\Skolan\1DV024 C#\examination-2\obj\Debug\netcoreapp3.1\examination-2.genruntimeconfig.cache
+H:\Skolan\1DV024 C#\examination-2\bin\Debug\netcoreapp3.1\ConsoleTables.dll
+H:\Skolan\1DV024 C#\examination-2\obj\Debug\netcoreapp3.1\examination-2.csproj.CopyComplete

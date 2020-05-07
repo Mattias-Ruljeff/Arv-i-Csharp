@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using ConsoleTables;
 
 namespace examination_2
 {
     class PrintShapesInConsole
     {
         static int numberOfShapes;
+        static int tableWidth = 10;
 
         public PrintShapesInConsole(){
         }
 
-        static public List<String> createShapes(bool is3D){
+        static public List<String> createShapesList(bool is3D){
             List<String> shapeList = new List<String>();
             List<Shape2D> shape2dList = new List<Shape2D>();
             List<Shape3D> shape3dList = new List<Shape3D>();
@@ -36,14 +39,30 @@ namespace examination_2
 
 
         }
-            static public void printListToConsole (List<String> shapeList) {
+        static public void printListToConsole (List<String> shapeList) 
+        {
+            var table = new ConsoleTable("one", "two", "three");
+            table.AddRow(1, 2, 3)
+                .AddRow("this line should be longer", "yes it is", "oh");
 
-                foreach (var item in shapeList)
-                {
-                 Console.WriteLine(item);   
-                }
+            table.Write();
+            Console.WriteLine();
 
+            var rows = Enumerable.Repeat(shapeList, 10);
+
+            ConsoleTable
+                .From<List<String>>(rows)
+                .Configure(o => o.NumberAlignment = Alignment.Right)
+                .Write(Format.Alternative);
+
+            Console.ReadKey();
+
+            foreach (var item in shapeList)
+            {
+                Console.WriteLine(item);
             }
+        }
+
+
     }
-    
 }

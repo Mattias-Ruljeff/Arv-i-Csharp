@@ -19,15 +19,15 @@ namespace examination_2
             Console.WriteLine("Enter \"3d\" for Shape 3D");
             shapeType = Console.ReadLine();
 
-            switch (shapeType) 
+            switch (shapeType)
             {
                 case "2d":
                     is3d =  false;
-                    PrintShapesInConsole.createShapes(is3d);
+                    PrintShapesInConsole.createShapesList(is3d);
                     break;
                 case "3d":
                     is3d = true;
-                    PrintShapesInConsole.createShapes(is3d);
+                    PrintShapesInConsole.createShapesList(is3d);
                     break;
                 default :
                     throw new ArgumentException("Enter either \"2d\" or \"3d\"");

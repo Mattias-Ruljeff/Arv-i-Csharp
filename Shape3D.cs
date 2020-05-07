@@ -19,15 +19,15 @@ namespace examination_2
             }
         }
         public double Length {get; set;}
-        public double MantelArea {
+        public virtual double MantelArea {
             get { return _baseShape.Perimeter * Height;}
         }
-        public double TotalSurfaceArea {
+        public virtual double TotalSurfaceArea {
             get{ return MantelArea + 2 * _baseShape.Area; }
         
         }
         public double Width {get; set;}
-        public double Volume {
+        public virtual double Volume {
             get{return _baseShape.Area * Height;}
         }
 
