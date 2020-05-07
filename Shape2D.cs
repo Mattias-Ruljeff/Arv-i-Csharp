@@ -49,7 +49,7 @@ namespace examination_2
                 case null:
                 case "":
                 case "G":
-                    return $"Längd: {Length}\nBredd: {Width}\nOmkrets: {Perimeter}\nArea: {Area}\n";
+                    return $"Figur: {ShapeType}\nLängd: {Length}\nBredd: {Width}\nOmkrets: {Perimeter}\nArea: {Area}\n";
                 case "R":
                     return $"{ShapeType} {Length} {Width} {Perimeter} {Area}";
                 default:

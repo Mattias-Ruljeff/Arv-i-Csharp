@@ -49,7 +49,7 @@ namespace examination_2
                 case null:
                 case "":
                 case "G":
-                    return $"Längd: {_baseShape.Length}\nBredd: {_baseShape.Width}\nHöjd: {Height}\nMantelarea: {MantelArea}\nBegränsningsarea: {TotalSurfaceArea}\nVolym: {Volume}\n";
+                    return $"Figur: {ShapeType}\nLängd: {_baseShape.Length}\nBredd: {_baseShape.Width}\nHöjd: {Height}\nMantelarea: {MantelArea}\nBegränsningsarea: {TotalSurfaceArea}\nVolym: {Volume}\n";
                 case "R":
                     return $"{ShapeType} {_baseShape.Length} {_baseShape.Width} {Height} {MantelArea} {TotalSurfaceArea} {Volume}";
                 default:
