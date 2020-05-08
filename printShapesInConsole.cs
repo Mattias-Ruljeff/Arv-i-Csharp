@@ -72,7 +72,7 @@ namespace examination_2
                     formatting = "R";
                     break;
                 default:
-                    throw new ArgumentException("SKriv antingen \"G\" eller \"R\"");
+                    throw new ArgumentException("Skriv antingen \"G\" eller \"R\"");
             }
             createShapesList();
         }
