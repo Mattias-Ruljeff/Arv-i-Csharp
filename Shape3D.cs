@@ -51,7 +51,7 @@ namespace examination_2
                 case "G":
                     return $"Figur: {ShapeType}\nLängd: {_baseShape.Length}\nBredd: {_baseShape.Width}\nHöjd: {Height}\nMantelarea: {MantelArea}\nBegränsningsarea: {TotalSurfaceArea}\nVolym: {Volume}\n";
                 case "R":
-                    return $"{ShapeType} {_baseShape.Length} {_baseShape.Width} {Height} {MantelArea} {TotalSurfaceArea} {Volume}";
+                    return $"{ShapeType}{_baseShape.Length, 10}{_baseShape.Width, 10}{Height, 10}{MantelArea, 20:n1}{TotalSurfaceArea, 20:n1}{Volume:, 20:n1}";
                 default:
                     throw new FormatException();
             }

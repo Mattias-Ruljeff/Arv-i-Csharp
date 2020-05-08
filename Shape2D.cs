@@ -52,7 +52,7 @@ namespace examination_2
                 case "G":
                     return $"Figur: {ShapeType}\nLängd: {Length}\nBredd: {Width}\nOmkrets: {Perimeter}\nArea: {Area}\n";
                 case "R":
-                    return $"{ShapeType} {Length} {Width} {Perimeter} {Area}";
+                    return $"{ShapeType} {Length}    {Width}    {Perimeter:n1}   {Area:n1}";
                 default:
                     throw new FormatException();
             }
