@@ -5,11 +5,30 @@ using ConsoleTables;
 
 namespace examination_2
 {
+    /// <summary>
+    /// The class that checks what kind of shapes the user
+    /// wants to create and print out in the console.
+    /// </summary>
     static class PrintShapesInConsole
     {
+        /// <summary>
+        /// The number of shapes that will be created in the Shapes-list.
+        /// </summary>
         static private int numberOfShapes;
+
+        /// <summary>
+        /// A string that the user chooses, to format the print of the shape-list.
+        /// </summary>
         static private String formatting;
+
+        /// <summary>
+        /// True if the user chooses to print out 3D-shapes.
+        /// </summary>
         static private bool is3D;
+
+        /// <summary>
+        /// The user chooses between 2D and 3D shapes.
+        /// </summary>
         static public void chooseShape() {
             Console.WriteLine("Create a list of Shapes");
             Console.WriteLine("Choose shape");
@@ -33,6 +52,10 @@ namespace examination_2
             }
 
         }
+        /// <summary>
+        ///  The user chooses the kind of print-formatting the list of
+        ///  shapes will have when printing in the console.
+        /// </summary>
         static public void choosePrintFormatting() {
             Console.WriteLine("Välj utskriftsformatering?");
             Console.WriteLine("R = Minimal utskrift");
@@ -54,6 +77,9 @@ namespace examination_2
             createShapesList();
         }
 
+        /// <summary>
+        /// Creates a list of shapes (between 3 and 29 random shapes) depending on the choices of the user.
+        /// </summary>
         static public void createShapesList(){
             Random random = new Random();
 
@@ -63,6 +89,8 @@ namespace examination_2
             numberOfShapes = random.Next(3,30);
 
             if (is3D) {
+
+                // Creates a list of 3D-shapes. 
                 for (int i = 0; i < numberOfShapes; i++)
                 {
                     List<Shape3D> shapesListFor3D = new List<Shape3D>()
@@ -74,6 +102,8 @@ namespace examination_2
                 }
                 print3DListToConsole(shape3dList);
             } else {
+
+                // Creates a list of 2D-shapes.
                 for (int i = 0; i < numberOfShapes; i++)
                 {
                     List<Shape2D> shapesListFor2D = new List<Shape2D>()
@@ -87,15 +117,19 @@ namespace examination_2
 
         }
 
+        /// <summary>
+        /// Orders the list of shapes by "Type" and "Volume" and prints it to the console
+        /// in the chosen formatting.
+        /// </summary>
+        /// <param name="shapeList"></param> A list of 3D-shapes.
         static public void print3DListToConsole (List<Shape3D> shapeList) 
         {
-            var orderedList = shapeList.OrderBy(x => x.ShapeType)
+            List<Shape3D> orderedList = shapeList.OrderBy(x => x.ShapeType)
                 .ThenBy(x => x.Volume)
                 .ToList();
             
             // Print list in console, in minimal format.
             if ( formatting == "R") {
-                Console.WriteLine("Figur Längd Bredd Höjd Mantelarea Begräns.area Volym");
                 foreach (var shape in orderedList)
                 {
                     Console.WriteLine(shape.ToString("R"));
@@ -112,15 +146,19 @@ namespace examination_2
             }
         }
 
+        /// <summary>
+        /// Orders the list of shapes by "Type" and "Area" and prints it to the console
+        /// in the chosen formatting.
+        /// </summary>
+        /// <param name="shapeList"></param>
         static public void print2DListToConsole (List<Shape2D> shapeList) 
         {
-            var orderedList = shapeList.OrderByDescending(x => x.ShapeType)
+            List<Shape2D> orderedList = shapeList.OrderByDescending(x => x.ShapeType)
                 .ThenBy(x => x.Area)
                 .ToList();
             
             // Print list in console, in minimal format. 
             if ( formatting == "R") {
-                Console.WriteLine("Figur Längd Bredd Omkrets Area");
                 foreach (var shape in orderedList)
                 {
                     Console.WriteLine(shape.ToString("R"));
@@ -131,7 +169,7 @@ namespace examination_2
                 var table = new ConsoleTable("Figur", "Längd", "Bredd", "Omkrets", "Area");
                 foreach (var shape in orderedList)
                 {
-                    table.AddRow($"{shape.ShapeType}", $"{shape.Length}", $"{shape.Width}", $"{shape.Perimeter}", $"{shape.Area}"); 
+                    table.AddRow($"{shape.ShapeType}", $"{shape.Length}", $"{shape.Width}", $"{shape.Perimeter:n}", $"{shape.Area:n}"); 
                 }
                 table.Write();
             }
