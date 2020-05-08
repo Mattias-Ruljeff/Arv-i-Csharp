@@ -6,7 +6,7 @@ namespace examination_2
     {
         public double Diameter {
             get { return Length ;}
-            set {;}
+            set { Length = value; Width = value;}
         }
 
         public override double MantelArea 
@@ -20,9 +20,9 @@ namespace examination_2
             get {return ( 4 / 3 ) * _baseShape.Area * ( Length / 2 );}
         }
         public Sphere(double diameter)
-        :base(ShapeType.Ellipse, new Ellipse(diameter, diameter), diameter)
+        :base(ShapeType.Sphere, new Ellipse(diameter, diameter), diameter)
         {
-
+            Diameter = diameter;
         }
     }
 }
