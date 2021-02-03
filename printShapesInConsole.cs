@@ -35,14 +35,12 @@ namespace examination_2
             Console.WriteLine("Enter \"2D\" for Shape 2D");
             Console.WriteLine("Enter \"3D\" for Shape 3D");
 
-            switch (Console.ReadLine())
+            switch (Console.ReadLine().Trim().ToUpper())
             {
-                case "2d":
                 case "2D":
                     is3D =  false;
                     choosePrintFormatting();
                     break;
-                case "3d":
                 case "3D":
                     is3D = true;
                     choosePrintFormatting();
@@ -61,14 +59,12 @@ namespace examination_2
             Console.WriteLine("R = Minimal utskrift");
             Console.WriteLine("G = Tabell-utskrift");
 
-            switch (Console.ReadLine())
+            switch (Console.ReadLine().Trim().ToUpper())
             {
                 case "G":
-                case "g":
                     formatting = "G";
                     break;
                 case "R":
-                case "r":
                     formatting = "R";
                     break;
                 default:
